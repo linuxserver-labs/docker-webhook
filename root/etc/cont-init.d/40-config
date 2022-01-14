@@ -1,0 +1,12 @@
+#!/usr/bin/with-contenv bash
+# shellcheck shell=bash
+
+mkdir -p \
+    /config/hooks
+
+if [ ! -f "/config/hooks/hooks.json" ]; then
+    cp /defaults/hooks.json /config/hooks/hooks.json
+fi
+
+chown -R abc:abc \
+    /config

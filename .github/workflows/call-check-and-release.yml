@@ -1,0 +1,18 @@
+name: Check for update and release
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 * * * *"
+
+jobs:
+  call-workflow:
+    uses: linuxserver-labs/docker-actions/.github/workflows/check-and-release.yml@v4
+    with:
+      repo_owner: ${{ github.repository_owner }}
+      app_name: "webhook"
+      release_type: "github"
+      release_url: "https://api.github.com/repos/adnanh/webhook"
+      release_name: "webhook"
+    secrets:
+      repo_release_token: ${{ secrets.repo_release_token }}
