@@ -2,7 +2,7 @@ name: Build Image On Release
 
 on:
   release:
-    types: [published]
+    types: [ published ]
   pull_request:
 
 jobs:
@@ -13,6 +13,6 @@ jobs:
       app_name: "webhook"
       release_type: "github"
       release_url: "https://api.github.com/repos/adnanh/webhook"
-      target_arch: "all"      
+      target_arch: "all"
     secrets:
       scarf_token: ${{ secrets.SCARF_TOKEN }}
