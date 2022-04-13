@@ -2,13 +2,17 @@ name: Build Image On Release
 
 on:
   release:
-    types: [published]
+    types: [ published ]
+  pull_request:
 
 jobs:
   call-workflow:
-    uses: linuxserver-labs/docker-actions/.github/workflows/build-image.yml@v4
+    uses: linuxserver-labs/docker-actions/.github/workflows/build-image.yml@v6
     with:
       repo_owner: ${{ github.repository_owner }}
       app_name: "webhook"
+      release_type: "github"
+      release_url: "https://api.github.com/repos/adnanh/webhook"
+      target-arch: "all"
     secrets:
       scarf_token: ${{ secrets.SCARF_TOKEN }}
