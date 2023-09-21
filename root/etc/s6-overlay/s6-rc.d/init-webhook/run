@@ -8,5 +8,5 @@ if [ ! -f "/config/hooks/hooks.json" ]; then
     cp /defaults/hooks.json /config/hooks/hooks.json
 fi
 
-chown -R abc:abc \
+lsiown -R abc:abc \
     /config

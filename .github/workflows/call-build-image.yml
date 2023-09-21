@@ -13,6 +13,6 @@ jobs:
       app_name: "webhook"
       release_type: "github"
       release_url: "https://api.github.com/repos/adnanh/webhook"
-      target-arch: "all"
+      target-arch: "64"
     secrets:
       scarf_token: ${{ secrets.SCARF_TOKEN }}

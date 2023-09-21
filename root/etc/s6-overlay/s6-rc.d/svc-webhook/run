@@ -3,6 +3,6 @@
 # shellcheck disable=SC2086
 
 exec \
-    s6-setuidgid abc webhook \
+    s6-setuidgid abc /app/webhook \
     -hooks /config/hooks/hooks.json \
     -ip 0.0.0.0 ${EXTRA_PARAM:=-hotreload}

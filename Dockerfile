@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-alpine:3.15 as buildstage
+FROM ghcr.io/linuxserver/baseimage-alpine:3.18 as buildstage
 
 # build variables
 ARG APP_VERSION
@@ -28,7 +28,7 @@ RUN \
   go get -d && \
   go build -o /app/webhook
 
-FROM ghcr.io/linuxserver/baseimage-alpine:3.15
+FROM ghcr.io/linuxserver/baseimage-alpine:3.18
 
 ARG BUILD_DATE
 ARG VERSION
@@ -38,5 +38,5 @@ LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DA
 LABEL maintainer="Roxedus"
 
 # copy files from build stage and local files
-COPY --from=buildstage /app/webhook /usr/bin/
+COPY --from=buildstage /app/webhook /app/webhook
 COPY root/ /
