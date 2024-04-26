@@ -7,7 +7,7 @@ on:
 
 jobs:
   call-workflow:
-    uses: linuxserver-labs/docker-actions/.github/workflows/build-image.yml@v6
+    uses: linuxserver-labs/docker-actions/.github/workflows/build-image.yml@v7.0.2
     with:
       repo_owner: ${{ github.repository_owner }}
       app_name: "webhook"
@@ -15,4 +15,4 @@ jobs:
       release_url: "https://api.github.com/repos/adnanh/webhook"
       target-arch: "64"
     secrets:
-      scarf_token: ${{ secrets.SCARF_TOKEN }}
+      OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
