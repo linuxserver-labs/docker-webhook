@@ -1,10 +1,10 @@
-# Contributing to invoiceninja
+# Contributing to webhook
 
 ## Gotchas
 
 * While contributing make sure to make all your changes before creating a Pull Request, as our pipeline builds each commit after the PR is open.
 * Read, and fill the Pull Request template
-  * If this is a fix for a typo in code or documentation in the README please file an issue
+  * If this is a fix for a typo (in code, documentation, or the README) please file an issue and let us sort it out. We do not need a PR
   * If the PR is addressing an existing issue include, closes #\<issue number>, in the body of the PR commit message
 * If you want to discuss changes, you can also bring it up in [#dev-talk](https://discordapp.com/channels/354974912613449730/757585807061155840) in our [Discord server](https://discord.gg/YWrKVTn)
 
@@ -24,10 +24,10 @@
 ## Readme
 
 If you would like to change our readme, please __**do not**__ directly edit the readme, as it is auto-generated on each commit.
-Instead edit the [readme-vars.yml](https://github.com/linuxserver/docker-invoiceninja/edit/master/readme-vars.yml).
+Instead edit the [readme-vars.yml](https://github.com/linuxserver-labs/docker-webhook/edit/master/readme-vars.yml).
 
 These variables are used in a template for our [Jenkins Builder](https://github.com/linuxserver/docker-jenkins-builder) as part of an ansible play.
-Most of these variables are also carried over to [docs.linuxserver.io](https://docs.linuxserver.io/images/docker-invoiceninja)
+Most of these variables are also carried over to [docs.linuxserver.io](https://docs.linuxserver.io/images/docker-webhook)
 
 ### Fixing typos or clarify the text in the readme
 
@@ -96,25 +96,26 @@ If you are proposing additional packages to be added, ensure that you added the 
 
 ### Testing your changes
 
-```
-git clone https://github.com/linuxserver/docker-invoiceninja.git
-cd docker-invoiceninja
+```bash
+git clone https://github.com/linuxserver-labs/docker-webhook.git
+cd docker-webhook
 docker build \
   --no-cache \
   --pull \
-  -t linuxserver/invoiceninja:latest .
+  -t linuxserver-labs/webhook:latest .
 ```
 
-The ARM variants can be built on x86_64 hardware using `multiarch/qemu-user-static`
-```
-docker run --rm --privileged multiarch/qemu-user-static:register --reset
+The ARM variants can be built on x86_64 hardware and vice versa using `lscr.io/linuxserver/qemu-static`
+
+```bash
+docker run --rm --privileged lscr.io/linuxserver/qemu-static --reset
 ```
 
 Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64`.
 
-## Update the chagelog
+## Update the changelog
 
-If you are modifying the Dockerfiles or any of the startup scripts in [root](https://github.com/linuxserver/docker-invoiceninja/tree/master/root), add an entry to the changelog
+If you are modifying the Dockerfiles or any of the startup scripts in [root](https://github.com/linuxserver-labs/docker-webhook/tree/main/root), add an entry to the changelog
 
 ```yml
 changelogs:

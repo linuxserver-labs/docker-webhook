@@ -23,7 +23,7 @@ target "amd64" {
 
 target "arm64v8" {
   inherits = ["image"]
-  dockerfile = "Dockerfile.aarch64"
+  dockerfile = "Dockerfile"
   platforms = [
     "linux/arm64"
   ]
