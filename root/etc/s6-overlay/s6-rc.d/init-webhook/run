@@ -8,5 +8,7 @@ if [ ! -f "/config/hooks/hooks.json" ]; then
     cp /defaults/hooks.json /config/hooks/hooks.json
 fi
 
-lsiown -R abc:abc \
-    /config
+if [[ -z ${LSIO_NON_ROOT_USER} ]]; then
+    lsiown -R abc:abc \
+        /config
+fi

@@ -7,7 +7,3 @@ contact_links:
   - name: Discourse discussion forum
     url: https://discourse.linuxserver.io
     about: Post on our community forum.
-
-  - name: Documentation
-    url: https://docs.linuxserver.io/images/docker-invoiceninja
-    about: Documentation - information about all of our containers.

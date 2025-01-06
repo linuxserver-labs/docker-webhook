@@ -13,6 +13,6 @@ jobs:
       app_name: "webhook"
       release_type: "github"
       release_url: "https://api.github.com/repos/adnanh/webhook"
-      target-arch: "64"
+      target-arch: "all"
     secrets:
       OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
